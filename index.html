@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaniel | Portfolio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;line-height:1.6;background:#f5f5f5;color:#222;transition:.3s}
+nav{position:sticky;top:0;background:#111;color:#fff;padding:15px;text-align:center;z-index:10}
+nav a{color:#fff;text-decoration:none;margin:0 12px}
+section{padding:70px 10%;min-height:60vh}
+.hero{background:#222;color:#fff;text-align:center;padding:100px 20px}
+.hero h1{font-size:3rem}
+.photo{width:150px;height:150px;border-radius:50%;background:#ddd;color:#555;display:flex;align-items:center;justify-content:center;margin:25px auto}
+.chips span,.skill,.card{display:inline-block;background:#fff;padding:15px;margin:8px;border-radius:12px;box-shadow:0 3px 10px #0001}
+.cards{display:flex;flex-wrap:wrap;gap:15px}
+.card{width:250px}
+button{border:0;border-radius:8px;padding:10px 16px;cursor:pointer;margin-top:10px}
+.dark{background:#121212;color:#eee}
+.dark .card,.dark .skill,.dark .chips span{background:#222;color:#eee}
+footer{text-align:center;padding:25px;background:#111;color:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#career">Career</a>
+<a href="#projects">Projects</a>
+<a href="#roadmap">Road Map</a>
+<button id="themeBtn">Dark Mode</button>
+</nav>
+
+<header class="hero">
+<div class="photo">ADD YOUR PHOTO HERE</div>
+<h1 id="greeting">Hello, I'm Chaniel.</h1>
+<p>Student • Future Architect / Engineer</p>
+</header>
+
+<section id="about">
+<h2>About Me</h2><br>
+<h3>Who I Am</h3>
+<p>I am a student who enjoys learning new things, developing my skills, and expressing my creativity.</p><br>
+<h3>My Interests</h3>
+<div class="chips">
+<span>Playing</span><span>Music</span><span>Technology</span><span>Eating</span>
+<span>Cooking</span><span>Communicating</span><span>Drawing</span>
+</div><br>
+<h3>My Talent</h3><p>Drawing</p><br>
+<h3>Soft Skills</h3>
+<div class="chips">
+<span>Communication</span><span>Teamwork</span><span>Creativity</span>
+<span>Time Management</span><span>Adaptability</span><span>Responsibility</span>
+</div>
+</section>
+
+<section>
+<h2>What I Bring</h2>
+<div class="cards">
+<div class="card"><h3>Creativity</h3><p>I use creative ideas to solve problems and create meaningful work.</p></div>
+<div class="card"><h3>Teamwork</h3><p>I can cooperate and communicate with others.</p></div>
+<div class="card"><h3>Problem Solving</h3><p>I try different approaches when facing challenges.</p></div>
+</div>
+</section>
+
+<section id="career">
+<h2>Career Goal</h2><br>
+<h1>Architect / Engineer</h1>
+<p>My goal is to build a career where I can use creativity, technology, drawing, and problem-solving.</p>
+</section>
+
+<section id="skills">
+<h2>Skills & Projects</h2>
+<div class="cards">
+<div class="card">
+<h3>Project 01</h3><h4>Web Portfolio</h4>
+<p>A personal website that presents my skills, interests, and career goals.</p>
+<button onclick="showMessage('Web Portfolio')">View Project</button>
+</div>
+<div class="card">
+<h3>Project 02</h3><h4>School Activity</h4>
+<p>A collection of school work and activities that demonstrate my skills.</p>
+<button onclick="showMessage('School Activity')">View Project</button>
+</div>
+</div><br>
+<h3>Hard Skills</h3>
+<div>
+<span class="skill">Computer Skills</span>
+<span class="skill">Web Design</span>
+<span class="skill">Digital Tools</span>
+</div><br>
+<h3>Evidence of My Skills</h3>
+<div class="chips">
+<span>Certificate</span><span>Finished Output</span><span>Screenshot</span><span>Documentation</span>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<p>My portfolio projects will be added here as I continue learning and creating.</p>
+</section>
+
+<section id="roadmap">
+<h2>Career Road Map</h2>
+<h3>Architect / Engineer</h3>
+<ol>
+<li>Finish Senior High School</li>
+<li>Choose the Right College Program</li>
+<li>Build Relevant Skills</li>
+<li>Gain Experience</li>
+<li>Reach My Career Goal</li>
+</ol><br>
+<h3>Requirements & My Plan</h3>
+<p>I will continue improving my academic performance, drawing, computer skills, communication, creativity, and problem-solving abilities.</p>
+</section>
+
+<footer>Made by Chaniel • <span id="year"></span></footer>
+
+<script>
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    themeBtn.textContent = document.body.classList.contains("dark")
+        ? "Light Mode" : "Dark Mode";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function showMessage(project) {
+    alert("You selected: " + project);
+}
+
+const greeting = document.getElementById("greeting");
+const text = greeting.textContent;
+greeting.textContent = "";
+let i = 0;
+
+function typeGreeting() {
+    if (i < text.length) {
+        greeting.textContent += text.charAt(i++);
+        setTimeout(typeGreeting, 70);
+    }
+}
+typeGreeting();
+</script>
+
+</body>
+</html>
